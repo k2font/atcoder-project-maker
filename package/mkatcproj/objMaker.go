@@ -46,7 +46,25 @@ int main() {
 }
 `
 
-const GO_CODE = ``
+const GO_CODE = `package main
+
+import (
+	"fmt"
+	"bufio"
+	"os"
+)
+
+func main() {
+	sc := bufio.NewScanner(os.Stdin)
+	sc.Split(bufio.ScanWords)
+	
+	sc.Scan()
+	a := sc.Text()
+	sc.Scan()
+	b := sc.Text()
+
+	fmt.Println(a + b)
+}`
 
 func CppObjMaker(fileName string, objectType string) {
 	if objectType == "project" {
@@ -74,7 +92,7 @@ func GoObjMaker(fileName string, objectType string) {
 			fmt.Println("ファイルが作成できませんでした")
 			os.Exit(1)
 		}
-		if _, error := file.Write([]byte(CPP_CODE)); error != nil {
+		if _, error := file.Write([]byte(GO_CODE)); error != nil {
 			fmt.Println("予期せぬエラーです")
 			os.Exit(1)
 		}
