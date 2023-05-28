@@ -16,9 +16,17 @@ var setupCmd = &cobra.Command{
 		objectType, _ := cmd.Flags().GetString("type")
 		fileName, _ := cmd.Flags().GetString("name")
 		if lang == "cpp" {
-			mkatcproj.CppObjMaker(fileName, objectType)
+			cppCode := mkatcproj.CppCode{
+				FileName:   fileName,
+				ObjectType: objectType,
+			}
+			cppCode.ObjMaker()
 		} else if lang == "go" {
-			mkatcproj.GoObjMaker(fileName, objectType)
+			goCode := mkatcproj.GoCode{
+				FileName:   fileName,
+				ObjectType: objectType,
+			}
+			goCode.ObjMaker()
 		}
 		fmt.Println("Project creation is complete!")
 	},

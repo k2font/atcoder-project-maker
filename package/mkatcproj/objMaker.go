@@ -66,11 +66,25 @@ func main() {
 	fmt.Println(a + b)
 }`
 
-func CppObjMaker(fileName string, objectType string) {
-	if objectType == "project" {
+type Code interface {
+	ObjMaker()
+}
 
-	} else if objectType == "file" {
-		file, err := os.Create(fileName + ".cpp")
+type GoCode struct {
+	FileName   string
+	ObjectType string
+}
+
+type CppCode struct {
+	FileName   string
+	ObjectType string
+}
+
+func (c *CppCode) ObjMaker() {
+	if c.ObjectType == "project" {
+
+	} else if c.ObjectType == "file" {
+		file, err := os.Create(c.FileName + ".cpp")
 		if err != nil {
 			fmt.Println("ファイルが作成できませんでした")
 			os.Exit(1)
@@ -83,11 +97,11 @@ func CppObjMaker(fileName string, objectType string) {
 	}
 }
 
-func GoObjMaker(fileName string, objectType string) {
-	if objectType == "project" {
+func (g *GoCode) ObjMaker() {
+	if g.ObjectType == "project" {
 
-	} else if objectType == "file" {
-		file, err := os.Create(fileName + ".go")
+	} else if g.ObjectType == "file" {
+		file, err := os.Create(g.FileName + ".go")
 		if err != nil {
 			fmt.Println("ファイルが作成できませんでした")
 			os.Exit(1)
