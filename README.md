@@ -8,13 +8,13 @@
 - spf13/cobra@1.7.0
 
 ## Usage
-- `$ mkatcproj --lang go --type project`
+- `$ mkatcproj setup --lang go --type project`
   - Go用のAtCoder用プロジェクトを作成します
   ```bash
   TODO: コマンドの出力結果を記載
   ```
 
-- `$ mkatcproj --lang cpp --type file`
+- `$ mkatcproj setup --lang cpp --type file`
   - C++用のAtCoder用ファイルを作成します
   ```bash
   TODO: コマンドの出力結果を記載
