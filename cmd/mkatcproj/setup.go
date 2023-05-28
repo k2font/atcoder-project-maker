@@ -18,8 +18,7 @@ var setupCmd = &cobra.Command{
 		if lang == "cpp" {
 			mkatcproj.CppObjMaker(fileName, objectType)
 		} else if lang == "go" {
-			// TODO: Go用オブジェクトを作成するための関数
-			fmt.Println("Coming soon...")
+			mkatcproj.GoObjMaker(fileName, objectType)
 		}
 		fmt.Println("Project creation is complete!")
 	},
