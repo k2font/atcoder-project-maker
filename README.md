@@ -28,12 +28,6 @@ Flags:
 ## Example
 - `$ mkatcproj setup --lang go --type project --name abc301`
   - Go用のAtCoder用プロジェクトを作成します
-  ```bash
-  TODO: コマンドの出力結果を記載
-  ```
 
 - `$ mkatcproj setup --lang cpp --type file --name abc301_d`
   - C++用のAtCoder用ファイルを作成します
-  ```bash
-  TODO: コマンドの出力結果を記載
-  ```
